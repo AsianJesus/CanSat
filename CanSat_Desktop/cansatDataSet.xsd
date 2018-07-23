@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="cansatDataSet" targetNamespace="http://tempuri.org/cansatDataSet.xsd" xmlns:mstns="http://tempuri.org/cansatDataSet.xsd" xmlns="http://tempuri.org/cansatDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cansatConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cansatConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CanSat_Desktop.Properties.Settings.GlobalReference.Default.cansatConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dataTableAdapter" GeneratorDataComponentClassName="dataTableAdapter" Name="data" UserDataComponentName="dataTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cansatConnectionString (Settings)" DbObjectName="cansat.data" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT flyID, packetID, recTime, flyTime, temp, press, height, humidity, speed, voltage, batch, gpsX, gpsY, gpsZ, co2, nh3, no2 FROM data</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fliesTableAdapter" GeneratorDataComponentClassName="fliesTableAdapter" Name="flies" UserDataComponentName="fliesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cansatConnectionString (Settings)" DbObjectName="cansat.flies" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, name, start, end FROM flies</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="cansatDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="cansatDataSet" msprop:Generator_UserDSName="cansatDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="data" msprop:Generator_TableClassName="dataDataTable" msprop:Generator_TableVarName="tabledata" msprop:Generator_TablePropName="data" msprop:Generator_RowDeletingName="dataRowDeleting" msprop:Generator_RowChangingName="dataRowChanging" msprop:Generator_RowEvHandlerName="dataRowChangeEventHandler" msprop:Generator_RowDeletedName="dataRowDeleted" msprop:Generator_UserTableName="data" msprop:Generator_RowChangedName="dataRowChanged" msprop:Generator_RowEvArgName="dataRowChangeEvent" msprop:Generator_RowClassName="dataRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="flies" msprop:Generator_TableClassName="fliesDataTable" msprop:Generator_TableVarName="tableflies" msprop:Generator_TablePropName="flies" msprop:Generator_RowDeletingName="fliesRowDeleting" msprop:Generator_RowChangingName="fliesRowChanging" msprop:Generator_RowEvHandlerName="fliesRowChangeEventHandler" msprop:Generator_RowDeletedName="fliesRowDeleted" msprop:Generator_UserTableName="flies" msprop:Generator_RowChangedName="fliesRowChanged" msprop:Generator_RowEvArgName="fliesRowChangeEvent" msprop:Generator_RowClassName="fliesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
