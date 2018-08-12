@@ -77,15 +77,15 @@ namespace CanSat_Desktop
 
         private void btnZoomMinus_Click(object sender, EventArgs e)
         {
-            if (zoom > 10) {
+            if (zoom > 7) {
                 ChangeZoom(-1);
                 RefreshMap(false);
             }
         }
         private void ShowMap(Image image)
         {
-            pbMap.Image = image;
             image.Save("sat_location.png");
+            pbMap.Image = image;
         }
         private void ChangeZoom(int scale)
         {
@@ -94,7 +94,7 @@ namespace CanSat_Desktop
 
         private void btnZoomPlus_Click(object sender, EventArgs e)
         {
-            if (zoom < 15)
+            if (zoom < 20)
             {
                 ChangeZoom(1);
                 RefreshMap(false);

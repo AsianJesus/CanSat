@@ -116,11 +116,18 @@ namespace CanSat_Desktop
         {
             InputID form = new InputID();
             DialogResult res = form.ShowDialog(this);
-            if(res == DialogResult.OK)
-                flyIDCurrent = form.Result;
+            if (res == DialogResult.OK)
+            {
+                int id = form.Result;
+                ChangeFlightID(id);
+            }
+        }
+        private void ChangeFlightID(int id)
+        {
+            flyIDCurrent = id;
             ResetEverything();
-            List<String> info = GetFlightInfo(flyIDCurrent);
-            if(info != null && info.Count != 0)
+            List<String> info = GetFlightInfo(id);
+            if (info != null && info.Count != 0)
             {
                 tbFlyID.Text = info[0];
                 tbFlyName.Text = info[1];
@@ -129,7 +136,6 @@ namespace CanSat_Desktop
             ListeningInitAndStart();
             UpdateInfo();
         }
-
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateInfo();
@@ -415,7 +421,7 @@ namespace CanSat_Desktop
         }
         private void ShowMap()
         {
-            if (mapWindow.IsDisposed)
+            if (mapWindow == null || mapWindow.IsDisposed)
             {
                 mapWindow = new wfMap();
                 if (lastPosition != null)
@@ -499,6 +505,7 @@ namespace CanSat_Desktop
             ListeningInitAndStart();
             UpdateInfo();
             mapWindow = new wfMap();
+            flyIDLastChecked = flyIDCurrent;
         }
         private void ListeningInitAndStart()
         {
@@ -544,6 +551,24 @@ namespace CanSat_Desktop
             }
         }
 
+        private void tCheckNewSession_Tick(object sender, EventArgs e)
+        {
+            CheckNewFlight();
+        }
+        private void CheckNewFlight()
+        {
+            int fID;
+            if (IsNewFlight(out fID))
+            {
+                var result = 
+                    MessageBox.Show(this, "There is new session - " + fID + "\nWould you like to change?", "New Session", MessageBoxButtons.YesNo);
+                if(result == DialogResult.Yes)
+                {
+                    ChangeFlightID(fID);
+                }
+                flyIDLastChecked = fID;
+            }
+        }
         private void tsbMap_Click(object sender, EventArgs e)
         {
             ShowMap();
