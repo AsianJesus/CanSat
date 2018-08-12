@@ -288,7 +288,7 @@ namespace CanSat_Desktop
         {
             get
             {
-                return "markers=color:" + color + "|" + coordinates.ToString();
+                return "markers=color:" + color.ToLower() + "|" + coordinates.ToString();
             }
         }
         public override string ToString()
