@@ -136,6 +136,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="cansatDataSet.xsc">
       <DependentUpon>cansatDataSet.xsd</DependentUpon>
@@ -159,6 +160,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_add_cross_new_plus_create_392530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_refresh_326679.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_close_309090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_12_Zoom_in_106237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_close_3090901.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_68_111123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maps-Pin-Place-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

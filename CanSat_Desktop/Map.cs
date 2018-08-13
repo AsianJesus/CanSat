@@ -183,6 +183,11 @@ namespace CanSat_Desktop
         {
             RefreshMap(true);
         }
+
+        private void lGpsX_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     class Provider<T>
     {

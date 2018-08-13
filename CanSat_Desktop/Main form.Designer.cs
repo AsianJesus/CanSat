@@ -29,47 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CanSat));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.changeImageDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeFlyIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetAndUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveEveryPlotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.tsbSF = new System.Windows.Forms.ToolStripButton();
-            this.tsbMap = new System.Windows.Forms.ToolStripButton();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.cTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.analogClock1 = new AnalogClocks.AnalogClock();
@@ -92,6 +80,18 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbFlyStart = new System.Windows.Forms.TextBox();
             this.tCheckNewSession = new System.Windows.Forms.Timer(this.components);
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.changeImageDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeFlyIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetAndUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveEveryPlotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.tsbSF = new System.Windows.Forms.ToolStripButton();
+            this.tsbMap = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cTemp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPress)).BeginInit();
@@ -125,151 +125,41 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeImageDirectoryToolStripMenuItem,
-            this.changeFlyIDToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.saveEveryPlotToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(101, 22);
-            this.toolStripDropDownButton1.Text = "Manual control";
-            // 
-            // changeImageDirectoryToolStripMenuItem
-            // 
-            this.changeImageDirectoryToolStripMenuItem.Name = "changeImageDirectoryToolStripMenuItem";
-            this.changeImageDirectoryToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.changeImageDirectoryToolStripMenuItem.Text = "Change image directory";
-            this.changeImageDirectoryToolStripMenuItem.Click += new System.EventHandler(this.changeImageDirectoryToolStripMenuItem_Click);
-            // 
-            // changeFlyIDToolStripMenuItem
-            // 
-            this.changeFlyIDToolStripMenuItem.Name = "changeFlyIDToolStripMenuItem";
-            this.changeFlyIDToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.changeFlyIDToolStripMenuItem.Text = "Change flyID";
-            this.changeFlyIDToolStripMenuItem.Click += new System.EventHandler(this.changeFlyIDToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem1,
-            this.resetAndUpdateToolStripMenuItem});
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.updateToolStripMenuItem.Text = "Hurry up";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem1
-            // 
-            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.updateToolStripMenuItem1.Text = "Update F5";
-            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
-            // 
-            // resetAndUpdateToolStripMenuItem
-            // 
-            this.resetAndUpdateToolStripMenuItem.Name = "resetAndUpdateToolStripMenuItem";
-            this.resetAndUpdateToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.resetAndUpdateToolStripMenuItem.Text = "Reset and update F12";
-            this.resetAndUpdateToolStripMenuItem.Click += new System.EventHandler(this.resetAndUpdateToolStripMenuItem_Click);
-            // 
-            // saveEveryPlotToolStripMenuItem
-            // 
-            this.saveEveryPlotToolStripMenuItem.Name = "saveEveryPlotToolStripMenuItem";
-            this.saveEveryPlotToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.saveEveryPlotToolStripMenuItem.Text = "Save every plot";
-            this.saveEveryPlotToolStripMenuItem.Click += new System.EventHandler(this.saveEveryPlotToolStripMenuItem_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(159, 22);
-            this.toolStripButton1.Text = "Change connection settings";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(115, 22);
-            this.toolStripButton2.Text = "Change commands";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(164, 22);
-            this.toolStripButton3.Text = "Reset database configuration";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // tsbSF
-            // 
-            this.tsbSF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbSF.Image = ((System.Drawing.Image)(resources.GetObject("tsbSF.Image")));
-            this.tsbSF.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSF.Name = "tsbSF";
-            this.tsbSF.Size = new System.Drawing.Size(76, 22);
-            this.tsbSF.Tag = "";
-            this.tsbSF.Text = "Show flights";
-            this.tsbSF.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // tsbMap
-            // 
-            this.tsbMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbMap.Image = ((System.Drawing.Image)(resources.GetObject("tsbMap.Image")));
-            this.tsbMap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbMap.Name = "tsbMap";
-            this.tsbMap.Size = new System.Drawing.Size(35, 22);
-            this.tsbMap.Text = "Map";
-            this.tsbMap.Click += new System.EventHandler(this.tsbMap_Click);
-            // 
             // cTemp
             // 
             this.cTemp.BackColor = System.Drawing.Color.Beige;
             this.cTemp.BorderlineColor = System.Drawing.Color.CadetBlue;
-            chartArea9.AxisY.Maximum = 320D;
-            chartArea9.AxisY.Minimum = 270D;
-            chartArea9.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea9.Name = "ChartArea1";
-            this.cTemp.ChartAreas.Add(chartArea9);
-            legend9.Alignment = System.Drawing.StringAlignment.Center;
-            legend9.BackColor = System.Drawing.Color.Transparent;
-            legend9.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend9.BorderWidth = 0;
-            legend9.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend9.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend9.HeaderSeparatorColor = System.Drawing.Color.Transparent;
-            legend9.IsTextAutoFit = false;
-            legend9.MaximumAutoSize = 10F;
-            legend9.Name = "Legend1";
-            legend9.TextWrapThreshold = 15;
-            this.cTemp.Legends.Add(legend9);
+            chartArea1.AxisY.Maximum = 320D;
+            chartArea1.AxisY.Minimum = 270D;
+            chartArea1.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea1.Name = "ChartArea1";
+            this.cTemp.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend1.BorderWidth = 0;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend1.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.Transparent;
+            legend1.IsTextAutoFit = false;
+            legend1.MaximumAutoSize = 10F;
+            legend1.Name = "Legend1";
+            legend1.TextWrapThreshold = 15;
+            this.cTemp.Legends.Add(legend1);
             this.cTemp.Location = new System.Drawing.Point(120, 28);
             this.cTemp.Name = "cTemp";
             this.cTemp.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series11.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series11.BorderWidth = 3;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series11.LabelBorderWidth = 12;
-            series11.Legend = "Legend1";
-            series11.Name = "Temperature";
-            this.cTemp.Series.Add(series11);
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series1.LabelBorderWidth = 12;
+            series1.Legend = "Legend1";
+            series1.Name = "Temperature";
+            this.cTemp.Series.Add(series1);
             this.cTemp.Size = new System.Drawing.Size(600, 170);
             this.cTemp.TabIndex = 22;
             this.cTemp.Text = "Temperature";
@@ -300,36 +190,36 @@
             // 
             this.cPress.BackColor = System.Drawing.Color.Beige;
             this.cPress.BorderlineColor = System.Drawing.Color.DarkTurquoise;
-            chartArea10.AxisY.Maximum = 105000D;
-            chartArea10.AxisY.Minimum = 95000D;
-            chartArea10.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea10.Name = "ChartArea1";
-            this.cPress.ChartAreas.Add(chartArea10);
-            legend10.Alignment = System.Drawing.StringAlignment.Center;
-            legend10.BackColor = System.Drawing.Color.Transparent;
-            legend10.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend10.BorderWidth = 0;
-            legend10.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend10.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend10.IsTextAutoFit = false;
-            legend10.MaximumAutoSize = 10F;
-            legend10.Name = "Legend1";
-            legend10.TextWrapThreshold = 15;
-            this.cPress.Legends.Add(legend10);
+            chartArea2.AxisY.Maximum = 105000D;
+            chartArea2.AxisY.Minimum = 95000D;
+            chartArea2.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea2.Name = "ChartArea1";
+            this.cPress.ChartAreas.Add(chartArea2);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend2.BorderWidth = 0;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend2.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend2.IsTextAutoFit = false;
+            legend2.MaximumAutoSize = 10F;
+            legend2.Name = "Legend1";
+            legend2.TextWrapThreshold = 15;
+            this.cPress.Legends.Add(legend2);
             this.cPress.Location = new System.Drawing.Point(727, 28);
             this.cPress.Name = "cPress";
             this.cPress.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series12.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series12.BorderWidth = 3;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series12.LabelBorderWidth = 12;
-            series12.Legend = "Legend1";
-            series12.Name = "Pressure";
-            this.cPress.Series.Add(series12);
+            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series2.LabelBorderWidth = 12;
+            series2.Legend = "Legend1";
+            series2.Name = "Pressure";
+            this.cPress.Series.Add(series2);
             this.cPress.Size = new System.Drawing.Size(600, 170);
             this.cPress.TabIndex = 31;
             this.cPress.Text = "Pressure";
@@ -339,37 +229,37 @@
             // 
             this.cSpeed.BackColor = System.Drawing.Color.Beige;
             this.cSpeed.BorderlineColor = System.Drawing.Color.LightSeaGreen;
-            chartArea11.AxisY.Maximum = 20D;
-            chartArea11.AxisY.Minimum = 0D;
-            chartArea11.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea11.Name = "ChartArea1";
-            this.cSpeed.ChartAreas.Add(chartArea11);
-            legend11.Alignment = System.Drawing.StringAlignment.Center;
-            legend11.BackColor = System.Drawing.Color.Transparent;
-            legend11.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend11.BorderWidth = 0;
-            legend11.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend11.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend11.HeaderSeparatorColor = System.Drawing.Color.Transparent;
-            legend11.IsTextAutoFit = false;
-            legend11.MaximumAutoSize = 10F;
-            legend11.Name = "Legend1";
-            legend11.TextWrapThreshold = 15;
-            this.cSpeed.Legends.Add(legend11);
+            chartArea3.AxisY.Maximum = 20D;
+            chartArea3.AxisY.Minimum = 0D;
+            chartArea3.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea3.Name = "ChartArea1";
+            this.cSpeed.ChartAreas.Add(chartArea3);
+            legend3.Alignment = System.Drawing.StringAlignment.Center;
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend3.BorderWidth = 0;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend3.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend3.HeaderSeparatorColor = System.Drawing.Color.Transparent;
+            legend3.IsTextAutoFit = false;
+            legend3.MaximumAutoSize = 10F;
+            legend3.Name = "Legend1";
+            legend3.TextWrapThreshold = 15;
+            this.cSpeed.Legends.Add(legend3);
             this.cSpeed.Location = new System.Drawing.Point(121, 204);
             this.cSpeed.Name = "cSpeed";
             this.cSpeed.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series13.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series13.BorderWidth = 3;
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series13.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series13.LabelBorderWidth = 12;
-            series13.Legend = "Legend1";
-            series13.Name = "Speed";
-            this.cSpeed.Series.Add(series13);
+            series3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series3.BorderWidth = 3;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series3.LabelBorderWidth = 12;
+            series3.Legend = "Legend1";
+            series3.Name = "Speed";
+            this.cSpeed.Series.Add(series3);
             this.cSpeed.Size = new System.Drawing.Size(600, 170);
             this.cSpeed.TabIndex = 32;
             this.cSpeed.Text = "Speed";
@@ -380,36 +270,36 @@
             // 
             this.cVoltage.BackColor = System.Drawing.Color.Beige;
             this.cVoltage.BorderlineColor = System.Drawing.Color.PaleGreen;
-            chartArea12.AxisY.Maximum = 10D;
-            chartArea12.AxisY.Minimum = 0D;
-            chartArea12.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea12.Name = "ChartArea1";
-            this.cVoltage.ChartAreas.Add(chartArea12);
-            legend12.Alignment = System.Drawing.StringAlignment.Center;
-            legend12.BackColor = System.Drawing.Color.Transparent;
-            legend12.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend12.BorderWidth = 0;
-            legend12.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend12.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend12.IsTextAutoFit = false;
-            legend12.MaximumAutoSize = 10F;
-            legend12.Name = "Legend1";
-            legend12.TextWrapThreshold = 15;
-            this.cVoltage.Legends.Add(legend12);
+            chartArea4.AxisY.Maximum = 10D;
+            chartArea4.AxisY.Minimum = 0D;
+            chartArea4.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea4.Name = "ChartArea1";
+            this.cVoltage.ChartAreas.Add(chartArea4);
+            legend4.Alignment = System.Drawing.StringAlignment.Center;
+            legend4.BackColor = System.Drawing.Color.Transparent;
+            legend4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend4.BorderWidth = 0;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend4.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend4.IsTextAutoFit = false;
+            legend4.MaximumAutoSize = 10F;
+            legend4.Name = "Legend1";
+            legend4.TextWrapThreshold = 15;
+            this.cVoltage.Legends.Add(legend4);
             this.cVoltage.Location = new System.Drawing.Point(121, 380);
             this.cVoltage.Name = "cVoltage";
             this.cVoltage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series14.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series14.BorderWidth = 3;
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series14.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series14.LabelBorderWidth = 12;
-            series14.Legend = "Legend1";
-            series14.Name = "Voltage";
-            this.cVoltage.Series.Add(series14);
+            series4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series4.BorderWidth = 3;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series4.LabelBorderWidth = 12;
+            series4.Legend = "Legend1";
+            series4.Name = "Voltage";
+            this.cVoltage.Series.Add(series4);
             this.cVoltage.Size = new System.Drawing.Size(600, 170);
             this.cVoltage.TabIndex = 33;
             this.cVoltage.Text = "Voltage";
@@ -419,34 +309,34 @@
             // cHum
             // 
             this.cHum.BackColor = System.Drawing.Color.Beige;
-            chartArea13.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea13.Name = "ChartArea1";
-            this.cHum.ChartAreas.Add(chartArea13);
-            legend13.Alignment = System.Drawing.StringAlignment.Center;
-            legend13.BackColor = System.Drawing.Color.Transparent;
-            legend13.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend13.BorderWidth = 0;
-            legend13.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend13.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend13.IsTextAutoFit = false;
-            legend13.MaximumAutoSize = 10F;
-            legend13.Name = "Legend1";
-            legend13.TextWrapThreshold = 15;
-            this.cHum.Legends.Add(legend13);
+            chartArea5.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea5.Name = "ChartArea1";
+            this.cHum.ChartAreas.Add(chartArea5);
+            legend5.Alignment = System.Drawing.StringAlignment.Center;
+            legend5.BackColor = System.Drawing.Color.Transparent;
+            legend5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend5.BorderWidth = 0;
+            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend5.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend5.IsTextAutoFit = false;
+            legend5.MaximumAutoSize = 10F;
+            legend5.Name = "Legend1";
+            legend5.TextWrapThreshold = 15;
+            this.cHum.Legends.Add(legend5);
             this.cHum.Location = new System.Drawing.Point(120, 556);
             this.cHum.Name = "cHum";
             this.cHum.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series15.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series15.BorderWidth = 3;
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series15.LabelBorderWidth = 12;
-            series15.Legend = "Legend1";
-            series15.Name = "Humidity";
-            this.cHum.Series.Add(series15);
+            series5.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series5.BorderWidth = 3;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series5.LabelBorderWidth = 12;
+            series5.Legend = "Legend1";
+            series5.Name = "Humidity";
+            this.cHum.Series.Add(series5);
             this.cHum.Size = new System.Drawing.Size(600, 170);
             this.cHum.TabIndex = 34;
             this.cHum.Text = "Humidity";
@@ -456,36 +346,36 @@
             // 
             this.cHeight.BackColor = System.Drawing.Color.Beige;
             this.cHeight.BorderlineColor = System.Drawing.Color.Aquamarine;
-            chartArea14.AxisY.Maximum = 500D;
-            chartArea14.AxisY.Minimum = 0D;
-            chartArea14.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea14.Name = "ChartArea1";
-            this.cHeight.ChartAreas.Add(chartArea14);
-            legend14.Alignment = System.Drawing.StringAlignment.Center;
-            legend14.BackColor = System.Drawing.Color.Transparent;
-            legend14.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend14.BorderWidth = 0;
-            legend14.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend14.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend14.IsTextAutoFit = false;
-            legend14.MaximumAutoSize = 10F;
-            legend14.Name = "Legend1";
-            legend14.TextWrapThreshold = 15;
-            this.cHeight.Legends.Add(legend14);
+            chartArea6.AxisY.Maximum = 500D;
+            chartArea6.AxisY.Minimum = 0D;
+            chartArea6.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea6.Name = "ChartArea1";
+            this.cHeight.ChartAreas.Add(chartArea6);
+            legend6.Alignment = System.Drawing.StringAlignment.Center;
+            legend6.BackColor = System.Drawing.Color.Transparent;
+            legend6.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend6.BorderWidth = 0;
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend6.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend6.IsTextAutoFit = false;
+            legend6.MaximumAutoSize = 10F;
+            legend6.Name = "Legend1";
+            legend6.TextWrapThreshold = 15;
+            this.cHeight.Legends.Add(legend6);
             this.cHeight.Location = new System.Drawing.Point(727, 204);
             this.cHeight.Name = "cHeight";
             this.cHeight.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series16.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series16.BorderWidth = 3;
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series16.LabelBorderWidth = 12;
-            series16.Legend = "Legend1";
-            series16.Name = "Height";
-            this.cHeight.Series.Add(series16);
+            series6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series6.BorderWidth = 3;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series6.LabelBorderWidth = 12;
+            series6.Legend = "Legend1";
+            series6.Name = "Height";
+            this.cHeight.Series.Add(series6);
             this.cHeight.Size = new System.Drawing.Size(600, 170);
             this.cHeight.TabIndex = 35;
             this.cHeight.Text = "Height";
@@ -494,35 +384,35 @@
             // cCharge
             // 
             this.cCharge.BackColor = System.Drawing.Color.Beige;
-            chartArea15.AxisY.Minimum = 0D;
-            chartArea15.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea15.Name = "ChartArea1";
-            this.cCharge.ChartAreas.Add(chartArea15);
-            legend15.Alignment = System.Drawing.StringAlignment.Center;
-            legend15.BackColor = System.Drawing.Color.Transparent;
-            legend15.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend15.BorderWidth = 0;
-            legend15.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend15.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend15.IsTextAutoFit = false;
-            legend15.MaximumAutoSize = 10F;
-            legend15.Name = "Legend1";
-            legend15.TextWrapThreshold = 15;
-            this.cCharge.Legends.Add(legend15);
+            chartArea7.AxisY.Minimum = 0D;
+            chartArea7.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea7.Name = "ChartArea1";
+            this.cCharge.ChartAreas.Add(chartArea7);
+            legend7.Alignment = System.Drawing.StringAlignment.Center;
+            legend7.BackColor = System.Drawing.Color.Transparent;
+            legend7.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend7.BorderWidth = 0;
+            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend7.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend7.IsTextAutoFit = false;
+            legend7.MaximumAutoSize = 10F;
+            legend7.Name = "Legend1";
+            legend7.TextWrapThreshold = 15;
+            this.cCharge.Legends.Add(legend7);
             this.cCharge.Location = new System.Drawing.Point(727, 380);
             this.cCharge.Name = "cCharge";
             this.cCharge.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series17.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series17.BorderWidth = 3;
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series17.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series17.LabelBorderWidth = 12;
-            series17.Legend = "Legend1";
-            series17.Name = "Charge";
-            this.cCharge.Series.Add(series17);
+            series7.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series7.BorderWidth = 3;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series7.LabelBorderWidth = 12;
+            series7.Legend = "Legend1";
+            series7.Name = "Charge";
+            this.cCharge.Series.Add(series7);
             this.cCharge.Size = new System.Drawing.Size(600, 170);
             this.cCharge.TabIndex = 36;
             this.cCharge.Text = "Charge";
@@ -532,48 +422,48 @@
             // 
             this.cGas.BackColor = System.Drawing.Color.Beige;
             this.cGas.BorderlineColor = System.Drawing.Color.LightCyan;
-            chartArea16.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea16.Name = "ChartArea1";
-            this.cGas.ChartAreas.Add(chartArea16);
-            legend16.Alignment = System.Drawing.StringAlignment.Center;
-            legend16.BackColor = System.Drawing.Color.Transparent;
-            legend16.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend16.BorderWidth = 0;
-            legend16.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend16.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend16.IsTextAutoFit = false;
-            legend16.MaximumAutoSize = 10F;
-            legend16.Name = "Legend1";
-            legend16.TextWrapThreshold = 15;
-            this.cGas.Legends.Add(legend16);
+            chartArea8.BackColor = System.Drawing.Color.LightSteelBlue;
+            chartArea8.Name = "ChartArea1";
+            this.cGas.ChartAreas.Add(chartArea8);
+            legend8.Alignment = System.Drawing.StringAlignment.Center;
+            legend8.BackColor = System.Drawing.Color.Transparent;
+            legend8.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend8.BorderWidth = 0;
+            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend8.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
+            legend8.IsTextAutoFit = false;
+            legend8.MaximumAutoSize = 10F;
+            legend8.Name = "Legend1";
+            legend8.TextWrapThreshold = 15;
+            this.cGas.Legends.Add(legend8);
             this.cGas.Location = new System.Drawing.Point(727, 556);
             this.cGas.Name = "cGas";
             this.cGas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series18.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series18.BorderWidth = 3;
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series18.Color = System.Drawing.Color.Aqua;
-            series18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series18.LabelBorderWidth = 12;
-            series18.Legend = "Legend1";
-            series18.Name = "CO";
-            series19.BorderWidth = 2;
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series19.Color = System.Drawing.Color.Red;
-            series19.Legend = "Legend1";
-            series19.Name = "NO2";
-            series20.BorderWidth = 2;
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series20.Color = System.Drawing.Color.Chartreuse;
-            series20.Legend = "Legend1";
-            series20.Name = "NH3";
-            this.cGas.Series.Add(series18);
-            this.cGas.Series.Add(series19);
-            this.cGas.Series.Add(series20);
+            series8.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series8.BorderWidth = 3;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Color = System.Drawing.Color.Aqua;
+            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series8.LabelBorderWidth = 12;
+            series8.Legend = "Legend1";
+            series8.Name = "CO";
+            series9.BorderWidth = 2;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Color = System.Drawing.Color.Red;
+            series9.Legend = "Legend1";
+            series9.Name = "NO2";
+            series10.BorderWidth = 2;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Color = System.Drawing.Color.Chartreuse;
+            series10.Legend = "Legend1";
+            series10.Name = "NH3";
+            this.cGas.Series.Add(series8);
+            this.cGas.Series.Add(series9);
+            this.cGas.Series.Add(series10);
             this.cGas.Size = new System.Drawing.Size(600, 170);
             this.cGas.TabIndex = 37;
             this.cGas.Text = "Gas";
@@ -680,6 +570,115 @@
             this.tCheckNewSession.Enabled = true;
             this.tCheckNewSession.Interval = 3000;
             this.tCheckNewSession.Tick += new System.EventHandler(this.tCheckNewSession_Tick);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeImageDirectoryToolStripMenuItem,
+            this.changeFlyIDToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.saveEveryPlotToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(101, 22);
+            this.toolStripDropDownButton1.Text = "Manual control";
+            // 
+            // changeImageDirectoryToolStripMenuItem
+            // 
+            this.changeImageDirectoryToolStripMenuItem.Name = "changeImageDirectoryToolStripMenuItem";
+            this.changeImageDirectoryToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.changeImageDirectoryToolStripMenuItem.Text = "Change image directory";
+            this.changeImageDirectoryToolStripMenuItem.Click += new System.EventHandler(this.changeImageDirectoryToolStripMenuItem_Click);
+            // 
+            // changeFlyIDToolStripMenuItem
+            // 
+            this.changeFlyIDToolStripMenuItem.Name = "changeFlyIDToolStripMenuItem";
+            this.changeFlyIDToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.changeFlyIDToolStripMenuItem.Text = "Change flyID";
+            this.changeFlyIDToolStripMenuItem.Click += new System.EventHandler(this.changeFlyIDToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem1,
+            this.resetAndUpdateToolStripMenuItem});
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.updateToolStripMenuItem.Text = "Hurry up";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem1
+            // 
+            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.updateToolStripMenuItem1.Text = "Update F5";
+            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
+            // 
+            // resetAndUpdateToolStripMenuItem
+            // 
+            this.resetAndUpdateToolStripMenuItem.Name = "resetAndUpdateToolStripMenuItem";
+            this.resetAndUpdateToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.resetAndUpdateToolStripMenuItem.Text = "Reset and update F12";
+            this.resetAndUpdateToolStripMenuItem.Click += new System.EventHandler(this.resetAndUpdateToolStripMenuItem_Click);
+            // 
+            // saveEveryPlotToolStripMenuItem
+            // 
+            this.saveEveryPlotToolStripMenuItem.Name = "saveEveryPlotToolStripMenuItem";
+            this.saveEveryPlotToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.saveEveryPlotToolStripMenuItem.Text = "Save every plot";
+            this.saveEveryPlotToolStripMenuItem.Click += new System.EventHandler(this.saveEveryPlotToolStripMenuItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(159, 22);
+            this.toolStripButton1.Text = "Change connection settings";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(115, 22);
+            this.toolStripButton2.Text = "Change commands";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(164, 22);
+            this.toolStripButton3.Text = "Reset database configuration";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // tsbSF
+            // 
+            this.tsbSF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSF.Image = ((System.Drawing.Image)(resources.GetObject("tsbSF.Image")));
+            this.tsbSF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSF.Name = "tsbSF";
+            this.tsbSF.Size = new System.Drawing.Size(76, 22);
+            this.tsbSF.Tag = "";
+            this.tsbSF.Text = "Show flights";
+            this.tsbSF.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // tsbMap
+            // 
+            this.tsbMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMap.Image = global::CanSat_Desktop.Properties.Resources.Maps_Pin_Place_icon;
+            this.tsbMap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbMap.Name = "tsbMap";
+            this.tsbMap.Size = new System.Drawing.Size(23, 22);
+            this.tsbMap.Click += new System.EventHandler(this.tsbMap_Click);
             // 
             // CanSat
             // 
