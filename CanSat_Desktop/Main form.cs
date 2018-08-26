@@ -646,13 +646,10 @@ namespace CanSat_Desktop
                     if (packets.Count == 0)
                         continue;
                     time = packets.Max(p => p.ReceivedTime);
+                    endTime = time;
                 }
             }
             catch(ThreadAbortException)
-            {
-                endTime = time;
-            }
-            finally
             {
                 endTime = time;
             }

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0739cc88-e21d-4918-b927-c398045f9070</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>execution.py</StartupFile>
+    <StartupFile>basicio.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
