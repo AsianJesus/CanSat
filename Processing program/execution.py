@@ -14,7 +14,12 @@ defInfo = {"sesID":"0","sesName":"None","host":"localhost","user":"root","passwo
 defCommands = {"ins_data" : "INSERT INTO data VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
     "ins_id" : "INSERT INTO flights(id,name) VALUES(%s,%s) ON DUPLICATE UPDATE;"}
 commands = {
-        "take_photo": "tp"
+        "release"       :0b000001,
+        "reset"         :0b000010,
+        "beep_start"    :0b000100,
+        "beep_stop"     :0b001000,
+        "take_photo"    :0b010000,
+        "save_pressure" :0b100000
     }
 curSession:Session = None   
 currInfo = {}

@@ -8,7 +8,7 @@ from hashlib import md5
 
 class XBeeInterface:
     def __init__(self,port:str,baudRate:int):
-        self.sPort = Serial(port=port,baudRate=baudRate);
+        self.sPort = Serial(port=port,baudrate=baudRate);
         self.portName,self.baudRate = port ,baudRate
     def open(self)->None:
         self.sPort.open();
@@ -20,9 +20,9 @@ class XBeeInterface:
     def send(self,msg:str)->None:
         if not self.isOpen:
             self.open()
-        txt = msg + "|" + CalculateHash(msg)
+        txt = msg + "|" + CalculateHash(msg) + "\0"
         self.sPort.write(txt.encode('ASCII'))
-    def read(self) -> []:
+    def read(self):
         if not self.isOpen:
             self.open()
         msg = self.sPort.read_all().decode('ASCII');
@@ -34,7 +34,7 @@ class BasicIOCommands(Enum):
     read = 0
     
 def CalculateHash(txt):
-    return md5(txt.encode('ASCII')).digest().hexdigest() 
+    return md5(txt.encode('ASCII')).hexdigest() 
 
 class BasicIO(Thread):
     errorLog:Queue
@@ -73,14 +73,13 @@ class BasicIO(Thread):
             if result:
                 self.lastMsg += result[0]
                 for m in [self.lastMsg,result[1:-1]] if len(result) > 1 else [result[0:-1]]:
-                    self.log.write("Got message - {}\n".format(m))
                     self.log.flush()
-                    m = self.__processMessage(m)
                     if m:
+                        m = self.__processMessage(m)
                         self.output.put(m) 
                 if len(result) > 1:
                     self.lastMsg = result[-1];
-    def __processMessage(self,comm)->str:
+    def __processMessage(self,comm:str)->str:
         parts = comm.split('/');
         if parts[0] == str(MSG_TYPES.COMMAND_REQUEST.value):
             self.write(self.lastCommand)
@@ -91,7 +90,7 @@ class BasicIO(Thread):
             self.log.write("Got command response {0}".format(parts[-1]))
             self.log.flush()
             return None
-        return "".join(parts[1:])
+        return "".join(parts[1:]) if len(parts) > 1 else "".join(parts)
     def read(self)->str:
         try:
             result = self.XBee.read()
@@ -102,12 +101,12 @@ class BasicIO(Thread):
     def write(self,msg:str):
         try:
             self.XBee.send(msg)
-            self.lastCommand = com;
+            self.lastCommand = msg;
         except Exception as e:
             BasicIO.errorLog.put(e)
     def comHandler(self,com):
         try:
-                write(com)
+                self.write(com)
         except Exception as e:
                 BasicIO.errorLog.put(e)
     def setErrorLog(log: Queue):
@@ -117,10 +116,9 @@ class BasicIO(Thread):
         self.opFlag.setState(False)
         self.log.close();
 
-if __name__ == "__main__":
-    pass
 
 class MSG_TYPES(Enum):
     TELEMETRY = 0xff
     COMMAND_RESPONSE = 0xef
     COMMAND_REQUEST	= 0xdf
+
