@@ -64,13 +64,12 @@ namespace CanSat_Desktop
         double? hum;
         Gases gases;
         double? speed;
-        double? voltage, batch;
-        double recTime;
+        double? voltage;
         double? flyTime;
-        public Packet(int packId,double recTime, double? flyTime = null , double? temp = null, double? press = null,double? h = null, double? sp = null, double? hum = null,
-            double? volt = null, double? charge = null, GPSCoordinates gPS = null, Gases g = null) {
+        String utcTime;
+        public Packet(int packId,double? flyTime = null , double? temp = null, double? press = null,double? h = null, double? sp = null, double? hum = null,
+            double? volt = null, GPSCoordinates gPS = null, Gases g = null,String utcTime = null) {
             id = packId;
-            this.recTime = recTime;
             this.flyTime = flyTime;
             gps = gPS;
             temperature = temp;
@@ -78,17 +77,13 @@ namespace CanSat_Desktop
             height = h;
             speed = sp;
             voltage = volt;
-            batch = charge;
             gases = g;
             this.hum = hum;
+            this.UtcTime = utcTime;
         }
         public int PacketID
         {
             get { return id; }
-        }
-        public double ReceivedTime
-        {
-            get { return recTime; }
         }
         public double? Temperature
         {
@@ -123,10 +118,6 @@ namespace CanSat_Desktop
         {
             get { return voltage; }
         }
-        public double? BatCharge
-        {
-            get { return batch; }
-        }
         public double? FlyingTime
         {
             get { return flyTime; }
@@ -143,6 +134,8 @@ namespace CanSat_Desktop
         {
             get { return gases; }
         }
+
+        public string UtcTime { get => utcTime; set => utcTime = value; }
         //packetID, temp, pressure, gx,gz,gy,height,hum,co2,nh3,no2,speed,voltage,batch,recTime, flyTime
     }
 }

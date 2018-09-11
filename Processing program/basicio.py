@@ -20,7 +20,8 @@ class XBeeInterface:
     def send(self,msg:str)->None:
         if not self.isOpen:
             self.open()
-        txt = msg + "|" + CalculateHash(msg) + "\0"
+        txt = str(msg) + "|" + "dsadas" + '\n'#CalculateHash(msg) + '\n'
+        print(txt)
         self.sPort.write(txt.encode('ASCII'))
     def read(self):
         if not self.isOpen:
@@ -47,6 +48,7 @@ class BasicIO(Thread):
         self.log = open(logFileName,"a");
         self.lastMsg = ""
         self.lastCommand = ""
+        self.activeCommands ={}
         super().__init__()
     def start(self):
         self.opFlag.setState(True)
@@ -55,24 +57,32 @@ class BasicIO(Thread):
         while True:
             if self.exitFlag:
                 break
-            sleep(1/4)
+            sleep(1/20)
             if not self.opFlag.getState():
                 continue
             self.__operate()            
     def stop(self):
         self.opFlag.setState(False)
     def __operate(self)->None:
+        for com in [c for c,i in self.activeCommands.items() if i]:
+            self.XBee.send(com);
         if not self.comInput.empty():
              comm = self.comInput.get()
              self.log.write("Got command - {}\n".format(comm))
              self.log.flush()
-             if isinstance(comm,str):
+             if isinstance(comm,int):
                 self.comHandler(comm)
         else:
             result = self.read()
             if result:
                 self.lastMsg += result[0]
                 for m in [self.lastMsg,result[1:-1]] if len(result) > 1 else [result[0:-1]]:
+                    if not m:
+                        continue
+                    if isinstance(m,(list,tuple)):
+                        m = m[0]
+                    m = m.rstrip('\r')
+                    self.log.write(str(m))
                     self.log.flush()
                     if m:
                         m = self.__processMessage(m)
@@ -83,19 +93,24 @@ class BasicIO(Thread):
         parts = comm.split('/');
         if parts[0] == str(MSG_TYPES.COMMAND_REQUEST.value):
             self.write(self.lastCommand)
-            self.log.write("Got command request")
+            self.log.write("Got command request\n")
             self.log.flush()
             return None
         if parts[0] == str(MSG_TYPES.COMMAND_RESPONSE.value):
-            self.log.write("Got command response {0}".format(parts[-1]))
+            self.log.write("Got command response {0}\n".format(parts[-1]))
             self.log.flush()
+            self.activeCommands[int(parts[1])] = False
             return None
-        return "".join(parts[1:]) if len(parts) > 1 else "".join(parts)
-    def read(self)->str:
+        if parts[0] == str(MSG_TYPES.TELEMETRY.value):
+            self.log.write("Got telemetry {0}\n".format("".join(parts[1:]) if len(parts) > 1 else "".join(parts)))
+            return "".join(parts[1:]) if len(parts) > 1 else "".join(parts)
+        return None
+    def read(self):
         try:
             result = self.XBee.read()
             return result
         except Exception as e:
+            BasicIO.errorLog.put("read")
             BasicIO.errorLog.put(e)
         return ""
     def write(self,msg:str):
@@ -107,6 +122,7 @@ class BasicIO(Thread):
     def comHandler(self,com):
         try:
                 self.write(com)
+                self.activeCommands[com] = True
         except Exception as e:
                 BasicIO.errorLog.put(e)
     def setErrorLog(log: Queue):
@@ -122,3 +138,11 @@ class MSG_TYPES(Enum):
     COMMAND_RESPONSE = 0xef
     COMMAND_REQUEST	= 0xdf
 
+if __name__ == "__main__":
+    out = Queue(100)
+    io = BasicIO("COM6",9600,Queue(100),out,Flag(True),"xbee_test.txt")
+    BasicIO.setErrorLog(out)
+    io.start();
+    while True:
+        if not out.empty():
+            print("{}".format(out.get()))

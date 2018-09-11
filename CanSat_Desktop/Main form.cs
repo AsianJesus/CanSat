@@ -18,7 +18,7 @@ namespace CanSat_Desktop
         Dictionary<string, string> mysqlCommands = new Dictionary<string,string>(){
             { "getID", "SELECT id,name,start from flights order by start desc limit 1;" },
             {"getInfo",
-                "SELECT packetID, recTime, flyTime, temp, press,height,speed,humidity,voltage,batch, gpsX,gpsY,gpsZ,co2,nh3,no2 FROM data WHERE flyID = @id AND recTime > @lasttime GROUP BY packetID ORDER BY packetID ;"},
+                "SELECT packetID, flyTime, temp, press,height,speed,humidity,voltage, gpsX,gpsY,gpsZ,co2,nh3,no2,utcTime FROM data WHERE flyID = @id AND flyTime > @lasttime GROUP BY packetID ORDER BY packetID ;"},
             {"getFlights",
                 "SELECT id,name,start,end, (SELECT count(packetID) FROM data WHERE flyID = id) FROM flights ORDER BY start DESC;"},
             {"getFlightInfo",
@@ -32,7 +32,7 @@ namespace CanSat_Desktop
         double flyTime;
         GPSCoordinates lastPosition;
         DBControl dbConnection,dbUpdateChannel;
-        PointControl plotTemp,plotPress,plotSpeed,plotHeight,plotVolt,plotCharge, plotHum,plotCO,plotNH,plotNO;
+        PointControl plotTemp,plotPress,plotSpeed,plotHeight,plotVolt, plotHum,plotCO,plotNH,plotNO;
         string imagePath = "image\\";
         ConcurrentBag<Packet> receivedPackets;
         List<Packet> allPackets;
@@ -151,6 +151,7 @@ namespace CanSat_Desktop
             lastTime = 0;
             flyTime = 0;
             ClearReceivedPackets();
+            tbUTCTime.Text = "";
             allPackets.Clear();
             if (mapWindow != null)
             {
@@ -279,7 +280,6 @@ namespace CanSat_Desktop
             SaveImage(cPress, imagePath);
             SaveImage(cSpeed, imagePath);
             SaveImage(cHeight, imagePath);
-            SaveImage(cCharge, imagePath);
             SaveImage(cGas, imagePath);
             SaveImage(cHum, imagePath);
             SaveImage(cVoltage, imagePath);
@@ -338,7 +338,6 @@ namespace CanSat_Desktop
             plotPress.Clear();
             plotSpeed.Clear();
             plotHeight.Clear();
-            plotCharge.Clear();
             plotCO.Clear();
             plotNH.Clear();
             plotNO.Clear();
@@ -393,7 +392,7 @@ namespace CanSat_Desktop
 
         private void cCharge_DoubleClick(object sender, EventArgs e)
         {
-            ShowGraph(plotCharge);
+            
         }
 
         private void cHum_DoubleClick(object sender, EventArgs e)
@@ -486,7 +485,6 @@ namespace CanSat_Desktop
             plotSpeed = new PointControl(cSpeed.Series[0]);
             plotHeight = new PointControl(cHeight.Series[0]);
             plotVolt = new PointControl(cVoltage.Series[0]);
-            plotCharge = new PointControl(cCharge.Series[0]);
             plotHum = new PointControl(cHum.Series[0]);
             plotCO = new PointControl(cGas.Series[0]);
             plotNH = new PointControl(cGas.Series[2]);
@@ -574,10 +572,16 @@ namespace CanSat_Desktop
             ShowMap();
         }
 
+        private void cTemp_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void CanSat_FormClosing(object sender, FormClosingEventArgs e)
         {
             ListeningStop();
-            mapWindow.Close();
+            if(mapWindow != null)
+                mapWindow.Close();
         }
         private List<string> GetFlightInfo(int id)
         {
@@ -645,7 +649,7 @@ namespace CanSat_Desktop
                     packets.ForEach(p => receivedPackets.Add(p));
                     if (packets.Count == 0)
                         continue;
-                    time = packets.Max(p => p.ReceivedTime);
+                    time = packets.Where(p=>p.FlyingTime!=null).Max(p => (double)p.FlyingTime);
                     endTime = time;
                 }
             }
@@ -673,21 +677,20 @@ namespace CanSat_Desktop
 
             foreach (List<String> row in rawData.Where((List<String> l) => { return l.Count >= 15; }))
             {
-                //packetID,  recTime,flyTime, temp, pressure,height,speed,hum,voltage,batch, gx,gz,gy,co2,nh3,no2
+                //packetID,flyTime, temp, pressure,height,speed,hum,voltage, gx,gz,gy,co2,nh3,no2, utc_time
                 packets.Add(
                     new Packet(
                         int.Parse(row[0]),
-                        Convert.ToDouble(row[1]),
+                        ConvertTonullable(row[1]),
                         ConvertTonullable(row[2]),
                         ConvertTonullable(row[3]),
                         ConvertTonullable(row[4]),
                         ConvertTonullable(row[5]),
                         ConvertTonullable(row[6]),
                         ConvertTonullable(row[7]),
-                        ConvertTonullable(row[8]),
-                        ConvertTonullable(row[9]),
-                        new GPSCoordinates(ConvertTonullable(row[10]), ConvertTonullable(row[11]), ConvertTonullable(row[12])),
-                        new Gases(ConvertTonullable(row[13]), ConvertTonullable(row[14]), ConvertTonullable(row[15]))
+                        new GPSCoordinates(ConvertTonullable(row[8]), ConvertTonullable(row[9]), ConvertTonullable(row[10])),
+                        new Gases(ConvertTonullable(row[11]), ConvertTonullable(row[12]), ConvertTonullable(row[13])),
+                        row[14]
                     )
                );                
             }
@@ -744,9 +747,6 @@ namespace CanSat_Desktop
             plotVolt.AddPointsXY(
                     packets.Where(p => { return p.Voltage != null; }).ToDictionary(p => { return (double)p.PacketID; }, p => { return (double)p.Voltage; })
                     );
-            plotCharge.AddPointsXY(
-                    packets.Where(p => { return p.BatCharge != null; }).ToDictionary(p => { return (double)p.PacketID; }, elementSelector: p => { return (double)p.BatCharge; })
-                    );
             plotCO.AddPointsXY(
                     packets.Where(p => { return p.Gases.CO2 != null; }).ToDictionary(p => { return (double)p.PacketID; }, p => { return (double)p.Gases.CO2; })
                     );
@@ -756,23 +756,27 @@ namespace CanSat_Desktop
             plotNO.AddPointsXY(
                     packets.Where(p => { return p.Gases.NO2 != null; }).ToDictionary(p => { return (double)p.PacketID; }, p => { return (double)p.Gases.NO2; })
                     );
+            tbUTCTime.Text = packets.OrderByDescending(p => p.PacketID).First().UtcTime;
             var positions = packets.Where(p => { return p.GpsX != null && p.GpsY != null && p.GpsZ != null; });
             flyTime = packets.Count != 0 ? packets.Where(p => { return p.FlyingTime != null; }).Max(p => { return (double)p.FlyingTime; }) : flyTime;
             DateTime d = new DateTime((long)flyTime * 10000000, DateTimeKind.Unspecified);
             analogClock1.Date = d;
-            GPSCoordinates pos = positions.Last().GPS;
             if (positions.Count() != 0)
             {
-                tbGPSX.Text = pos.CoordinateX.ToString();
-                tbGPSY.Text = pos.CoordinateY.ToString();
-                tbGPSZ.Text = pos.CoordinateZ.ToString();
-
-                if (mapWindow != null && !mapWindow.IsDisposed)
+                GPSCoordinates pos = positions.Last().GPS;
+                if (positions.Count() != 0)
                 {
-                    mapWindow.SatellitePosition.X = (double)pos.CoordinateX;
-                    mapWindow.SatellitePosition.Y = (double)pos.CoordinateY;
+                    tbGPSX.Text = pos.CoordinateX.ToString();
+                    tbGPSY.Text = pos.CoordinateY.ToString();
+                    tbGPSZ.Text = pos.CoordinateZ.ToString();
+
+                    if (mapWindow != null && !mapWindow.IsDisposed)
+                    {
+                        mapWindow.SatellitePosition.X = (double)pos.CoordinateX;
+                        mapWindow.SatellitePosition.Y = (double)pos.CoordinateY;
+                    }
+                    lastPosition = pos;
                 }
-                lastPosition = pos;
             }
         }
         private void ShowGraph(PointControl plot)

@@ -11,7 +11,7 @@ configuration:config.Configuration = None
 flags = {}
 queues = {}
 defInfo = {"sesID":"0","sesName":"None","host":"localhost","user":"root","password":"1123581321ElViNBV","schema":"pourtest","port":"COM6","baudrate":"9600"}
-defCommands = {"ins_data" : "INSERT INTO data VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
+defCommands = {"ins_data" : "INSERT INTO data(flyID,packetID,flyTime,temp,press,height,humidity,speed,voltage,gpsX,gpsY,gpsZ,co2,no2,nh3,utcTime) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
     "ins_id" : "INSERT INTO flights(id,name) VALUES(%s,%s) ON DUPLICATE UPDATE;"}
 commands = {
         "release"       :0b000001,
@@ -162,7 +162,7 @@ def prepareThreads():
     threads[Processes.BasicIO] = basicio.BasicIO(
                     currInfo["port"],int(currInfo["baudrate"]),
                     queues[Queues.XBeeInput],queues[Queues.XBeeOutput],flags[Processes.BasicIO])
-    threads[Processes.Processing] = processing.DataHandler(queues[Queues.XBeeInput],queues[Queues.ProcessingOutput],flags[Processes.Processing])
+    threads[Processes.Processing] = processing.DataHandler(queues[Queues.XBeeOutput],queues[Queues.ProcessingOutput],flags[Processes.Processing])
     threads[Processes.Distribution] = distributor.Distributor(queues[Queues.ProcessingOutput],
                                                               queues[Queues.DatabaseInput],queues[Queues.FirstFileInput],queues[Queues.SecondFileInput],
                                                               flags[Processes.Distribution],curSession)

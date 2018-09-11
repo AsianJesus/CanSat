@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CanSat));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -50,14 +51,22 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CanSat));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.changeImageDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeFlyIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetAndUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveEveryPlotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.tsbSF = new System.Windows.Forms.ToolStripButton();
+            this.tsbMap = new System.Windows.Forms.ToolStripButton();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.cTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.analogClock1 = new AnalogClocks.AnalogClock();
@@ -66,7 +75,6 @@
             this.cVoltage = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cHum = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cHeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.cCharge = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cGas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbGPSZ = new System.Windows.Forms.TextBox();
             this.tbGPSY = new System.Windows.Forms.TextBox();
@@ -80,18 +88,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbFlyStart = new System.Windows.Forms.TextBox();
             this.tCheckNewSession = new System.Windows.Forms.Timer(this.components);
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.changeImageDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeFlyIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetAndUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveEveryPlotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.tsbSF = new System.Windows.Forms.ToolStripButton();
-            this.tsbMap = new System.Windows.Forms.ToolStripButton();
+            this.tbUTCTime = new System.Windows.Forms.TextBox();
+            this.lUTC = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cTemp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPress)).BeginInit();
@@ -99,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cVoltage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cCharge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cGas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,12 +122,119 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeImageDirectoryToolStripMenuItem,
+            this.changeFlyIDToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.saveEveryPlotToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(101, 22);
+            this.toolStripDropDownButton1.Text = "Manual control";
+            // 
+            // changeImageDirectoryToolStripMenuItem
+            // 
+            this.changeImageDirectoryToolStripMenuItem.Name = "changeImageDirectoryToolStripMenuItem";
+            this.changeImageDirectoryToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.changeImageDirectoryToolStripMenuItem.Text = "Change image directory";
+            this.changeImageDirectoryToolStripMenuItem.Click += new System.EventHandler(this.changeImageDirectoryToolStripMenuItem_Click);
+            // 
+            // changeFlyIDToolStripMenuItem
+            // 
+            this.changeFlyIDToolStripMenuItem.Name = "changeFlyIDToolStripMenuItem";
+            this.changeFlyIDToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.changeFlyIDToolStripMenuItem.Text = "Change flyID";
+            this.changeFlyIDToolStripMenuItem.Click += new System.EventHandler(this.changeFlyIDToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem1,
+            this.resetAndUpdateToolStripMenuItem});
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.updateToolStripMenuItem.Text = "Hurry up";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem1
+            // 
+            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.updateToolStripMenuItem1.Text = "Update F5";
+            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
+            // 
+            // resetAndUpdateToolStripMenuItem
+            // 
+            this.resetAndUpdateToolStripMenuItem.Name = "resetAndUpdateToolStripMenuItem";
+            this.resetAndUpdateToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.resetAndUpdateToolStripMenuItem.Text = "Reset and update F12";
+            this.resetAndUpdateToolStripMenuItem.Click += new System.EventHandler(this.resetAndUpdateToolStripMenuItem_Click);
+            // 
+            // saveEveryPlotToolStripMenuItem
+            // 
+            this.saveEveryPlotToolStripMenuItem.Name = "saveEveryPlotToolStripMenuItem";
+            this.saveEveryPlotToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.saveEveryPlotToolStripMenuItem.Text = "Save every plot";
+            this.saveEveryPlotToolStripMenuItem.Click += new System.EventHandler(this.saveEveryPlotToolStripMenuItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(159, 22);
+            this.toolStripButton1.Text = "Change connection settings";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(115, 22);
+            this.toolStripButton2.Text = "Change commands";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(164, 22);
+            this.toolStripButton3.Text = "Reset database configuration";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // tsbSF
+            // 
+            this.tsbSF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSF.Image = ((System.Drawing.Image)(resources.GetObject("tsbSF.Image")));
+            this.tsbSF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSF.Name = "tsbSF";
+            this.tsbSF.Size = new System.Drawing.Size(76, 22);
+            this.tsbSF.Tag = "";
+            this.tsbSF.Text = "Show flights";
+            this.tsbSF.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // tsbMap
+            // 
+            this.tsbMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMap.Image = global::CanSat_Desktop.Properties.Resources.Maps_Pin_Place_icon;
+            this.tsbMap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbMap.Name = "tsbMap";
+            this.tsbMap.Size = new System.Drawing.Size(23, 22);
+            this.tsbMap.Click += new System.EventHandler(this.tsbMap_Click);
+            // 
             // cTemp
             // 
             this.cTemp.BackColor = System.Drawing.Color.Beige;
             this.cTemp.BorderlineColor = System.Drawing.Color.CadetBlue;
-            chartArea1.AxisY.Maximum = 320D;
-            chartArea1.AxisY.Minimum = 270D;
             chartArea1.BackColor = System.Drawing.Color.LightSteelBlue;
             chartArea1.Name = "ChartArea1";
             this.cTemp.ChartAreas.Add(chartArea1);
@@ -163,6 +267,7 @@
             this.cTemp.Size = new System.Drawing.Size(600, 170);
             this.cTemp.TabIndex = 22;
             this.cTemp.Text = "Temperature";
+            this.cTemp.Click += new System.EventHandler(this.cTemp_Click);
             this.cTemp.DoubleClick += new System.EventHandler(this.cTemp_DoubleClick);
             // 
             // analogClock1
@@ -324,7 +429,7 @@
             legend5.Name = "Legend1";
             legend5.TextWrapThreshold = 15;
             this.cHum.Legends.Add(legend5);
-            this.cHum.Location = new System.Drawing.Point(120, 556);
+            this.cHum.Location = new System.Drawing.Point(727, 380);
             this.cHum.Name = "cHum";
             this.cHum.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series5.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
@@ -381,90 +486,54 @@
             this.cHeight.Text = "Height";
             this.cHeight.DoubleClick += new System.EventHandler(this.cHeight_DoubleClick);
             // 
-            // cCharge
+            // cGas
             // 
-            this.cCharge.BackColor = System.Drawing.Color.Beige;
-            chartArea7.AxisY.Minimum = 0D;
+            this.cGas.BackColor = System.Drawing.Color.Beige;
+            this.cGas.BorderlineColor = System.Drawing.Color.LightCyan;
             chartArea7.BackColor = System.Drawing.Color.LightSteelBlue;
             chartArea7.Name = "ChartArea1";
-            this.cCharge.ChartAreas.Add(chartArea7);
+            this.cGas.ChartAreas.Add(chartArea7);
             legend7.Alignment = System.Drawing.StringAlignment.Center;
             legend7.BackColor = System.Drawing.Color.Transparent;
             legend7.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
             legend7.BorderWidth = 0;
-            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             legend7.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
             legend7.IsTextAutoFit = false;
             legend7.MaximumAutoSize = 10F;
             legend7.Name = "Legend1";
             legend7.TextWrapThreshold = 15;
-            this.cCharge.Legends.Add(legend7);
-            this.cCharge.Location = new System.Drawing.Point(727, 380);
-            this.cCharge.Name = "cCharge";
-            this.cCharge.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            this.cGas.Legends.Add(legend7);
+            this.cGas.Location = new System.Drawing.Point(121, 556);
+            this.cGas.Name = "cGas";
+            this.cGas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series7.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
             series7.BorderWidth = 3;
             series7.ChartArea = "ChartArea1";
             series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series7.Color = System.Drawing.Color.Aqua;
             series7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             series7.LabelBorderWidth = 12;
             series7.Legend = "Legend1";
-            series7.Name = "Charge";
-            this.cCharge.Series.Add(series7);
-            this.cCharge.Size = new System.Drawing.Size(600, 170);
-            this.cCharge.TabIndex = 36;
-            this.cCharge.Text = "Charge";
-            this.cCharge.DoubleClick += new System.EventHandler(this.cCharge_DoubleClick);
-            // 
-            // cGas
-            // 
-            this.cGas.BackColor = System.Drawing.Color.Beige;
-            this.cGas.BorderlineColor = System.Drawing.Color.LightCyan;
-            chartArea8.BackColor = System.Drawing.Color.LightSteelBlue;
-            chartArea8.Name = "ChartArea1";
-            this.cGas.ChartAreas.Add(chartArea8);
-            legend8.Alignment = System.Drawing.StringAlignment.Center;
-            legend8.BackColor = System.Drawing.Color.Transparent;
-            legend8.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend8.BorderWidth = 0;
-            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend8.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine;
-            legend8.IsTextAutoFit = false;
-            legend8.MaximumAutoSize = 10F;
-            legend8.Name = "Legend1";
-            legend8.TextWrapThreshold = 15;
-            this.cGas.Legends.Add(legend8);
-            this.cGas.Location = new System.Drawing.Point(727, 556);
-            this.cGas.Name = "cGas";
-            this.cGas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series8.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series8.BorderWidth = 3;
+            series7.Name = "CO";
+            series8.BorderWidth = 2;
             series8.ChartArea = "ChartArea1";
             series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Color = System.Drawing.Color.Aqua;
-            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series8.LabelBorderWidth = 12;
+            series8.Color = System.Drawing.Color.Red;
             series8.Legend = "Legend1";
-            series8.Name = "CO";
+            series8.Name = "NO2";
             series9.BorderWidth = 2;
             series9.ChartArea = "ChartArea1";
             series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Color = System.Drawing.Color.Red;
+            series9.Color = System.Drawing.Color.Chartreuse;
+            series9.Enabled = false;
             series9.Legend = "Legend1";
-            series9.Name = "NO2";
-            series10.BorderWidth = 2;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Color = System.Drawing.Color.Chartreuse;
-            series10.Legend = "Legend1";
-            series10.Name = "NH3";
+            series9.Name = "NH3";
+            this.cGas.Series.Add(series7);
             this.cGas.Series.Add(series8);
             this.cGas.Series.Add(series9);
-            this.cGas.Series.Add(series10);
-            this.cGas.Size = new System.Drawing.Size(600, 170);
+            this.cGas.Size = new System.Drawing.Size(1206, 170);
             this.cGas.TabIndex = 37;
             this.cGas.Text = "Gas";
             this.cGas.Click += new System.EventHandler(this.chart8_Click);
@@ -538,9 +607,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(0, 690);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 45;
-            this.label3.Text = "GPS - Z";
+            this.label3.Text = "Satellites in sight";
             // 
             // label4
             // 
@@ -571,114 +640,22 @@
             this.tCheckNewSession.Interval = 3000;
             this.tCheckNewSession.Tick += new System.EventHandler(this.tCheckNewSession_Tick);
             // 
-            // toolStripDropDownButton1
+            // tbUTCTime
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeImageDirectoryToolStripMenuItem,
-            this.changeFlyIDToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.saveEveryPlotToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(101, 22);
-            this.toolStripDropDownButton1.Text = "Manual control";
+            this.tbUTCTime.Location = new System.Drawing.Point(3, 323);
+            this.tbUTCTime.Name = "tbUTCTime";
+            this.tbUTCTime.ReadOnly = true;
+            this.tbUTCTime.Size = new System.Drawing.Size(117, 20);
+            this.tbUTCTime.TabIndex = 49;
             // 
-            // changeImageDirectoryToolStripMenuItem
+            // lUTC
             // 
-            this.changeImageDirectoryToolStripMenuItem.Name = "changeImageDirectoryToolStripMenuItem";
-            this.changeImageDirectoryToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.changeImageDirectoryToolStripMenuItem.Text = "Change image directory";
-            this.changeImageDirectoryToolStripMenuItem.Click += new System.EventHandler(this.changeImageDirectoryToolStripMenuItem_Click);
-            // 
-            // changeFlyIDToolStripMenuItem
-            // 
-            this.changeFlyIDToolStripMenuItem.Name = "changeFlyIDToolStripMenuItem";
-            this.changeFlyIDToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.changeFlyIDToolStripMenuItem.Text = "Change flyID";
-            this.changeFlyIDToolStripMenuItem.Click += new System.EventHandler(this.changeFlyIDToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem1,
-            this.resetAndUpdateToolStripMenuItem});
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.updateToolStripMenuItem.Text = "Hurry up";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem1
-            // 
-            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.updateToolStripMenuItem1.Text = "Update F5";
-            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
-            // 
-            // resetAndUpdateToolStripMenuItem
-            // 
-            this.resetAndUpdateToolStripMenuItem.Name = "resetAndUpdateToolStripMenuItem";
-            this.resetAndUpdateToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.resetAndUpdateToolStripMenuItem.Text = "Reset and update F12";
-            this.resetAndUpdateToolStripMenuItem.Click += new System.EventHandler(this.resetAndUpdateToolStripMenuItem_Click);
-            // 
-            // saveEveryPlotToolStripMenuItem
-            // 
-            this.saveEveryPlotToolStripMenuItem.Name = "saveEveryPlotToolStripMenuItem";
-            this.saveEveryPlotToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.saveEveryPlotToolStripMenuItem.Text = "Save every plot";
-            this.saveEveryPlotToolStripMenuItem.Click += new System.EventHandler(this.saveEveryPlotToolStripMenuItem_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(159, 22);
-            this.toolStripButton1.Text = "Change connection settings";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(115, 22);
-            this.toolStripButton2.Text = "Change commands";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(164, 22);
-            this.toolStripButton3.Text = "Reset database configuration";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // tsbSF
-            // 
-            this.tsbSF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbSF.Image = ((System.Drawing.Image)(resources.GetObject("tsbSF.Image")));
-            this.tsbSF.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSF.Name = "tsbSF";
-            this.tsbSF.Size = new System.Drawing.Size(76, 22);
-            this.tsbSF.Tag = "";
-            this.tsbSF.Text = "Show flights";
-            this.tsbSF.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // tsbMap
-            // 
-            this.tsbMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbMap.Image = global::CanSat_Desktop.Properties.Resources.Maps_Pin_Place_icon;
-            this.tsbMap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbMap.Name = "tsbMap";
-            this.tsbMap.Size = new System.Drawing.Size(23, 22);
-            this.tsbMap.Click += new System.EventHandler(this.tsbMap_Click);
+            this.lUTC.AutoSize = true;
+            this.lUTC.Location = new System.Drawing.Point(47, 307);
+            this.lUTC.Name = "lUTC";
+            this.lUTC.Size = new System.Drawing.Size(55, 13);
+            this.lUTC.TabIndex = 50;
+            this.lUTC.Text = "UTC Time";
             // 
             // CanSat
             // 
@@ -686,6 +663,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1327, 729);
+            this.Controls.Add(this.lUTC);
+            this.Controls.Add(this.tbUTCTime);
             this.Controls.Add(this.tbFlyStart);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -697,7 +676,6 @@
             this.Controls.Add(this.tbGPSY);
             this.Controls.Add(this.tbGPSZ);
             this.Controls.Add(this.cGas);
-            this.Controls.Add(this.cCharge);
             this.Controls.Add(this.cHeight);
             this.Controls.Add(this.cHum);
             this.Controls.Add(this.cVoltage);
@@ -724,7 +702,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cVoltage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cCharge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cGas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -753,7 +730,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart cVoltage;
         private System.Windows.Forms.DataVisualization.Charting.Chart cHum;
         private System.Windows.Forms.DataVisualization.Charting.Chart cHeight;
-        private System.Windows.Forms.DataVisualization.Charting.Chart cCharge;
         private System.Windows.Forms.DataVisualization.Charting.Chart cGas;
         private System.Windows.Forms.TextBox tbGPSZ;
         private System.Windows.Forms.TextBox tbGPSY;
@@ -768,6 +744,8 @@
         private System.Windows.Forms.TextBox tbFlyStart;
         private System.Windows.Forms.ToolStripButton tsbMap;
         private System.Windows.Forms.Timer tCheckNewSession;
+        private System.Windows.Forms.TextBox tbUTCTime;
+        private System.Windows.Forms.Label lUTC;
     }
 }
 

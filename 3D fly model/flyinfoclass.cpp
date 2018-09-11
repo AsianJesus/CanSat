@@ -143,7 +143,7 @@ bool FlyInfoClass::InitializeConnection(const char * host, const char * user, co
 	try {
 		m_dbConnection = new sql::MYDB(host, user, passw, schema);
 		m_stmt = m_dbConnection->PrepareStatement(
-			"SELECT packetID, flyTime, gpsX, gpsY, gpsZ FROM data WHERE packetID > ? AND flyID = ? LIMIT 1;");
+			"SELECT packetID, flyTime, gpsX, gpsY, height FROM data WHERE packetID > ? AND flyID = ? LIMIT 1;");
 		return true;
 	}
 	catch(...){
