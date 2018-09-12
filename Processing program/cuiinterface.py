@@ -274,7 +274,7 @@ class CUI(Thread):
         for comName,comDesc in CUI.messages.items():
             print("{:15} - {:30}".format(comName,comDesc))
     def __sendMessage(self,args):
-        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages[args],lambda: print("Command sent")))
+        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages[args],lambda: print(f"Command(#{args}) sent")))
         print("We successfully sended {} command".format(args))
     def __clearScreen():
         os.system("clear")
