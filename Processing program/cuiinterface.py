@@ -193,7 +193,11 @@ class CUI(Thread):
        "clear" : Command(
                         help=lambda: print("Clear screen"),
                         execution=lambda self,args: CUI.__clearScreen()
-           )
+           ),
+       "reset" : Command(
+                        verification=lambda args: args and int(args[0]),
+                        help=lambda: print("Send \"reset\" command and change session. Using: reset 5"),
+                        execution=lambda self,args: self.__changeSession(args))
         }
     messages : dict
     def __init__(self,ses:Session,flags:{str:Flag},queues:dict,msg:dict): 
@@ -270,8 +274,10 @@ class CUI(Thread):
         for comName,comDesc in CUI.messages.items():
             print("{:15} - {:30}".format(comName,comDesc))
     def __sendMessage(self,args):
-        self.queues.putIntoQueue(Queues.XBeeInput,CUI.messages[args] if args in CUI.messages else args)
+        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages[args],lambda: print("Command sent")))
         print("We successfully sended {} command".format(args))
     def __clearScreen():
         os.system("clear")
         os.system("cls")
+    def __reset(self,args):
+        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages["reset"],self.__changeSession(int(args[0]))))

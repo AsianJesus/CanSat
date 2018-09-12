@@ -21,7 +21,6 @@ class XBeeInterface:
         if not self.isOpen:
             self.open()
         txt = str(msg) + "|" + "dsadas" + '\n'#CalculateHash(msg) + '\n'
-        print(txt)
         self.sPort.write(txt.encode('ASCII'))
     def read(self):
         if not self.isOpen:
@@ -48,7 +47,7 @@ class BasicIO(Thread):
         self.log = open(logFileName,"a");
         self.lastMsg = ""
         self.lastCommand = ""
-        self.activeCommands ={}
+        self.activeCommands =[]
         super().__init__()
     def start(self):
         self.opFlag.setState(True)
@@ -64,13 +63,13 @@ class BasicIO(Thread):
     def stop(self):
         self.opFlag.setState(False)
     def __operate(self)->None:
-        for com in [c for c,i in self.activeCommands.items() if i]:
-            self.XBee.send(com);
+        for com in self.activeCommands:
+            self.XBee.send(com.getValue());
         if not self.comInput.empty():
              comm = self.comInput.get()
              self.log.write("Got command - {}\n".format(comm))
              self.log.flush()
-             if isinstance(comm,int):
+             if isinstance(comm,SatCommand):
                 self.comHandler(comm)
         else:
             result = self.read()
@@ -99,7 +98,9 @@ class BasicIO(Thread):
         if parts[0] == str(MSG_TYPES.COMMAND_RESPONSE.value):
             self.log.write("Got command response {0}\n".format(parts[-1]))
             self.log.flush()
-            self.activeCommands[int(parts[1])] = False
+            for com in [x for x in self.activeCommands if x.getValue() == int(parts[1])]:
+                self.activeCommands.remove(com)
+                com.executeCallback()
             return None
         if parts[0] == str(MSG_TYPES.TELEMETRY.value):
             self.log.write("Got telemetry {0}\n".format("".join(parts[1:]) if len(parts) > 1 else "".join(parts)))
@@ -121,8 +122,8 @@ class BasicIO(Thread):
             BasicIO.errorLog.put(e)
     def comHandler(self,com):
         try:
-                self.write(com)
-                self.activeCommands[com] = True
+                self.write(com.getValue())
+                self.activeCommands.append(com)
         except Exception as e:
                 BasicIO.errorLog.put(e)
     def setErrorLog(log: Queue):
@@ -137,6 +138,17 @@ class MSG_TYPES(Enum):
     TELEMETRY = 0xff
     COMMAND_RESPONSE = 0xef
     COMMAND_REQUEST	= 0xdf
+
+class SatCommand:
+    def __init__(self,value,callback):
+        self.value = value
+        self.callback = callback
+    def getValue(self):
+        return self.value
+    def getCallback(self):
+        return self.callback
+    def executeCallback(self):
+        return self.callback()
 
 if __name__ == "__main__":
     out = Queue(100)
