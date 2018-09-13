@@ -22,6 +22,7 @@ class XBeeInterface:
             self.open()
         txt = str(msg) + "|" + "dsadas" + '\n'#CalculateHash(msg) + '\n'
         self.sPort.write(txt.encode('ASCII'))
+        print(txt)
     def read(self):
         if not self.isOpen:
             self.open()
@@ -101,6 +102,7 @@ class BasicIO(Thread):
             for com in [x for x in self.activeCommands if x.getValue() == int(parts[1])]:
                 self.activeCommands.remove(com)
                 com.executeCallback()
+                print(com.value)
             return None
         if parts[0] == str(MSG_TYPES.TELEMETRY.value):
             self.log.write("Got telemetry {0}\n".format("".join(parts[1:]) if len(parts) > 1 else "".join(parts)))

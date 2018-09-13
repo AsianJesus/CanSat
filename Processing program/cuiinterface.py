@@ -280,4 +280,4 @@ class CUI(Thread):
         os.system("clear")
         os.system("cls")
     def __resetSession(self,args):
-        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages["reset"],self.__changeSession(int(args[0]))))
+        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages["reset"],self.__changeSession(args)))
