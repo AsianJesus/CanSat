@@ -1,4 +1,5 @@
 from threading import Thread
+from time import sleep
 from flag import Flag
 from session import Session
 from enum import Enum
@@ -245,6 +246,7 @@ class CUI(Thread):
         self.session.setID(id)
         if len(args) >= 2:
             self.session.setName(args[1])
+        print(f"Session successfully changed. Current session - #{self.session.id} ,#{self.session.name}");
     def __showCommands():
         for command,body in CUI.comList.items():
             print("{:20} | ".format(command),end='')
@@ -280,4 +282,7 @@ class CUI(Thread):
         os.system("clear")
         os.system("cls")
     def __resetSession(self,args):
-        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages["reset"],self.__changeSession(args)))
+        self.queues.putIntoQueue(Queues.XBeeInput,basicio.SatCommand(CUI.messages["reset"],lambda: self.__delayAndChangeSession(args,2)))
+    def __delayAndChangeSession(self,args,delay):
+        sleep(delay)
+        self.__changeSession(args)

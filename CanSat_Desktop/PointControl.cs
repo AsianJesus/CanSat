@@ -7,8 +7,27 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CanSat_Desktop
 {
+    
     public class PointControl
     {
+        private class Comparer : IEqualityComparer<DataPoint>
+        {
+            public bool Equals(DataPoint x, DataPoint y)
+            {
+                return x.XValue == y.XValue;
+            }
+
+            public int GetHashCode(DataPoint obj)
+            {
+                unchecked  // overflow is fine
+                {
+                    int hash = 17;
+                    hash = hash * 23 + obj.XValue.GetHashCode();
+                    hash = hash * 23 + obj.YValues.GetHashCode();
+                    return hash;
+                }
+            }
+        }
         private Series curve;
         public PointControl(Chart chart, int indx) { curve = chart.Series[0]; }
         public PointControl(Series s) { curve = s;}
@@ -23,10 +42,14 @@ namespace CanSat_Desktop
         }
         public void AddPointsXY(Dictionary<double, double> dots)
         {
+            if (dots.Count == 0) return;
             double[] xPoints = curve.Points.Select((DataPoint d) => d.XValue).ToArray();
-            foreach( var kp in dots.Where((KeyValuePair<double, double> kp) => { return !xPoints.Contains(kp.Key); }))
+            ////var points = dots.Union(curve.Points.Distinct(new Comparer()).ToDictionary(x => x.XValue, y => y.YValues[0]));
+            //curve.Points.Clear();
+            foreach( var kp in dots)
             {
                 curve.Points.AddXY(kp.Key, kp.Value);
+               
             }
         }
         public void AddPointY(double x)

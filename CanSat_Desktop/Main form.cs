@@ -18,7 +18,7 @@ namespace CanSat_Desktop
         Dictionary<string, string> mysqlCommands = new Dictionary<string,string>(){
             { "getID", "SELECT id,name,start from flights order by start desc limit 1;" },
             {"getInfo",
-                "SELECT packetID, flyTime, temp, press,height,speed,humidity,voltage, gpsX,gpsY,gpsZ,co2,nh3,no2,utcTime FROM data WHERE flyID = @id AND flyTime > @lasttime GROUP BY packetID ORDER BY packetID ;"},
+                "SELECT packetID, flyTime, temp, press,height,speed,humidity,voltage, gpsX,gpsY,gpsZ,co2,nh3,no2,utcTime FROM data WHERE flyID = @id AND flyTime > @lasttime GROUP BY flyTime ORDER BY flyTime;"},
             {"getFlights",
                 "SELECT id,name,start,end, (SELECT count(packetID) FROM data WHERE flyID = id) FROM flights ORDER BY start DESC;"},
             {"getFlightInfo",
@@ -729,45 +729,50 @@ namespace CanSat_Desktop
         }
         private void UpdateGraphs(List<Packet> packets)
         {
+            Packet[] pacs = packets.AsParallel()
+                .OrderBy(x => x.FlyingTime)
+                .GroupBy(x => x.FlyingTime)
+                .SelectMany(x => x)
+                .ToArray();
             plotTemp.AddPointsXY(
-                    packets.Where(p => { return p.Temperature != null; })
+                    pacs.Where(p => { return p.Temperature != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Temperature; })
                     );
             plotPress.AddPointsXY(
-                    packets.Where(p => { return p.Pressure != null; })
+                    pacs.Where(p => { return p.Pressure != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Pressure; })
                     );
             plotHeight.AddPointsXY(
-                    packets.Where(p => { return p.Height != null; })
+                    pacs.Where(p => { return p.Height != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Height; })
                     );
             plotSpeed.AddPointsXY(
-                    packets.Where(p => { return p.Speed != null; })
+                    pacs.Where(p => { return p.Speed != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Speed; })
                     );
             plotHum.AddPointsXY(
-                    packets.Where(p => { return p.Humidity != null; })
+                    pacs.Where(p => { return p.Humidity != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Humidity; })
                     );
             plotVolt.AddPointsXY(
-                    packets.Where(p => { return p.Voltage != null; })
+                    pacs.Where(p => { return p.Voltage != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Voltage; })
                     );
             plotCO.AddPointsXY(
-                    packets.Where(p => { return p.Gases.CO2 != null; })
+                    pacs.Where(p => { return p.Gases.CO2 != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Gases.CO2; })
                     );
             plotNH.AddPointsXY(
-                    packets.Where(p => { return p.Gases.NH3 != null; })
+                    pacs.Where(p => { return p.Gases.NH3 != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Gases.NH3; })
                     );
             plotNO.AddPointsXY(
-                    packets.Where(p => { return p.Gases.NO2 != null; })
+                    pacs.Where(p => { return p.Gases.NO2 != null; })
                     .ToDictionary(p => { return (double)p.FlyingTime; }, p => { return (double)p.Gases.NO2; })
                     );
-            tbUTCTime.Text = packets.OrderByDescending(p => p.FlyingTime).First().UtcTime;
-            var positions = packets.Where(p => { return p.GpsX != null && p.GpsY != null && p.GpsZ != null; });
-            flyTime = packets.Count != 0 ? packets.Where(p => { return p.FlyingTime != null; }).Max(p => { return (double)p.FlyingTime; }) : flyTime;
+            tbUTCTime.Text = pacs.OrderByDescending(p => p.FlyingTime).First().UtcTime;
+            var positions = pacs.Where(p => { return p.GpsX != null && p.GpsY != null && p.GpsZ != null; });
+            flyTime = pacs.Count() != 0 ? pacs.Where(p => { return p.FlyingTime != null; }).Max(p => { return (double)p.FlyingTime; }) : flyTime;
             DateTime d = new DateTime((long)flyTime * 10000000, DateTimeKind.Unspecified);
             analogClock1.Date = d;
             if (positions.Count() != 0)

@@ -44,7 +44,7 @@ class DataHandler(Thread):
         lambda x: "press" if x > 95000 and x < 120000 else None,
         lambda x: "height" if x > 0 and x < 1000 else None,
         lambda x: "hum" if x > 0 and x <= 100 else None,
-        lambda x: "speed" if x > -20 and x < 20 and speed != 0 else None,
+        lambda x: "speed" if x > -20 and x < 20 and x != 0 else None,
         lambda x: "volt" if x > 0 and x <= 12 else None,
         lambda x: "gpsX" if x >= 40 else None,
         lambda x: "gpsY" if x > 0 else None,

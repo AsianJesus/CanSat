@@ -22,7 +22,6 @@ class XBeeInterface:
             self.open()
         txt = str(msg) + "|" + "dsadas" + '\n'#CalculateHash(msg) + '\n'
         self.sPort.write(txt.encode('ASCII'))
-        print(txt)
     def read(self):
         if not self.isOpen:
             self.open()
