@@ -211,6 +211,7 @@
             this.pbMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMap.TabIndex = 0;
             this.pbMap.TabStop = false;
+            this.pbMap.DoubleClick += new System.EventHandler(this.btnZoomPlus_Click);
             // 
             // wfMap
             // 

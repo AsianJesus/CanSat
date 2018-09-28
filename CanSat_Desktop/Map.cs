@@ -45,13 +45,15 @@ namespace CanSat_Desktop
         }
         private void RefreshMap(bool erase = false)
         {
-            if (imageRefresher == null || imageRefresher.Status != TaskStatus.Running)
+            if (imageRefresher == null || 
+                !(imageRefresher.Status == TaskStatus.Running 
+                || imageRefresher.Status == TaskStatus.WaitingForActivation))
             {
                 Task.Run(() =>
                 {
                     if (erase)
                     {
-                        imageRefresher = LoadMap(CreateRequest(), ShowMap, ShowError, 5);
+                        imageRefresher = LoadMap(CreateRequest(), ShowMap, ShowError, 15);
                     }
                     else
                     {
@@ -143,25 +145,23 @@ namespace CanSat_Desktop
         }
         private static async Task LoadMap(string mapUrl, Action<Image> callback, Action exceptionHandler, float timeout)
         {
-            var image = LoadImage(mapUrl);
+            var byteArray = http.GetByteArrayAsync(mapUrl);
             var delay = Task.Delay(TimeSpan.FromSeconds(timeout));
-            if (delay != (await Task.WhenAny(image, Task.Delay(TimeSpan.FromSeconds(timeout))))) {
-                if (image.Status == TaskStatus.RanToCompletion)
+            /*if (byteArray == (*/
+            await Task.WhenAny(byteArray, delay);//)) {
+                if (byteArray.Status == TaskStatus.RanToCompletion)
                 {
-                    callback(image.Result);
+                    using(var msg = new MemoryStream(byteArray.Result))
+                    {
+                        callback(Image.FromStream(msg));
+                    }
                 }
                 else
                 {
                     exceptionHandler();
                 }
-            }
+           // }
         } 
-        private static async Task<Image> LoadImage(string url)
-        {
-            Stream s = await http.GetStreamAsync(url);
-            Image result = Image.FromStream(s);
-            return result;
-        }
         private void RefreshMarkerList()
         {
             if (markers.Count == 0) {
@@ -181,7 +181,7 @@ namespace CanSat_Desktop
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            RefreshMap(true);
+            RefreshMap(false);
         }
 
         private void lGpsX_Click(object sender, EventArgs e)

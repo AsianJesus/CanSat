@@ -237,7 +237,7 @@ bool FlyInfoClass::GetNewPosition()
 		(float)(gpsZ-m_gpsZeroHeight) * m_gpsHeightScale,
 		(float)(gpsY - m_gpsZeroY) * m_gpsYScale
 	};
-	m_mInfoCurrent = (gpsX == 0 || gpsY == 0 || gpsZ == 0) ? new ModelInfo(*m_mInfoCurrent) 
+	m_mInfoCurrent = (gpsX == 0 || gpsY == 0 || gpsZ == 0) ? (m_mInfoCurrent ? new ModelInfo(*m_mInfoCurrent) : new ModelInfo()) 
 		: new ModelInfo(packetID, flyTime, positions);
 	if (flyTime == 0)m_mInfoCurrent->flyTime = m_mInfoCurrent ? m_mInfoCurrent->flyTime : 0;
 	m_mInfoCurrent->packetID = packetID;
