@@ -46,8 +46,8 @@ namespace AnalogClocks
             DateTime time = manual ? date : DateTime.Now;
             DrawDigit(time, e);
             float degrSec = (time.Second % 60) * 6;
-            float degrMin = (time.Minute + time.Second/60)* 6;
-            float degrHour = (time.Hour % 12 + time.Minute / 60) * 30;
+            float degrMin = (time.Minute + time.Second/60.0f)* 6;
+            float degrHour = (time.Hour % 12 + time.Minute / 60.0f) * 30;
             if(hourAvail)
                 DrawHour(degrHour, e);
             if(minAvail)

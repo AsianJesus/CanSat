@@ -255,6 +255,10 @@ bool FlyInfoClass::CheckForNewFlight(int & id, char *& name, time_t & start, tim
 		while (result->next()) {
 			fId = result->getInt("id");
 			sql::SQLString t = result->getString("name");
+			if (fName) {
+				delete[] fName;
+				fName = nullptr;
+			}
 			fName = new char[t.length() + 1];
 			strcpy_s(fName, t.length() + 1, t.c_str());
 			tStart = result->getInt("start");
@@ -276,8 +280,14 @@ bool FlyInfoClass::CheckForNewFlight(int & id, char *& name, time_t & start, tim
 	id = fId;
 	start = tStart;
 	end = tEnd;
+	if (name) {
+		delete[] name;
+		name = nullptr;
+	}
 	name = new char[strlen(fName) + 1];
 	strcpy_s(name, strlen(fName)+1, fName);
+	delete[] fName;
+	fName = nullptr;
 	return true;
 }
 

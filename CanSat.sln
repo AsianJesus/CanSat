@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanSat_Desktop", "CanSat_De
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Processing program", "Processing program\Processing program.pyproj", "{0739CC88-E21D-4918-B927-C398045F9070}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Satellite software", "Satellite software\Satellite software.vcxproj", "{4EFBFBA7-3575-47BB-B288-746BEBE569CD}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3D fly model", "3D fly model\3D fly model.vcxproj", "{8E879CC2-D710-40E2-AAFB-634B737A3EDD}"
 EndProject
 Global
@@ -47,18 +45,6 @@ Global
 		{0739CC88-E21D-4918-B927-C398045F9070}.Release|ARM.ActiveCfg = Release|Any CPU
 		{0739CC88-E21D-4918-B927-C398045F9070}.Release|x64.ActiveCfg = Release|Any CPU
 		{0739CC88-E21D-4918-B927-C398045F9070}.Release|x86.ActiveCfg = Release|Any CPU
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Debug|ARM.ActiveCfg = Debug|Win32
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Debug|x64.ActiveCfg = Debug|x64
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Debug|x64.Build.0 = Debug|x64
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Debug|x86.ActiveCfg = Debug|Win32
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Debug|x86.Build.0 = Debug|Win32
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Release|Any CPU.ActiveCfg = Release|Win32
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Release|ARM.ActiveCfg = Release|Win32
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Release|x64.ActiveCfg = Release|x64
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Release|x64.Build.0 = Release|x64
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Release|x86.ActiveCfg = Release|Win32
-		{4EFBFBA7-3575-47BB-B288-746BEBE569CD}.Release|x86.Build.0 = Release|Win32
 		{8E879CC2-D710-40E2-AAFB-634B737A3EDD}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{8E879CC2-D710-40E2-AAFB-634B737A3EDD}.Debug|ARM.ActiveCfg = Debug|Win32
 		{8E879CC2-D710-40E2-AAFB-634B737A3EDD}.Debug|x64.ActiveCfg = Debug|x64

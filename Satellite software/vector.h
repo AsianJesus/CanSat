@@ -88,7 +88,7 @@ inline T& Vector<T>::last()
 template<class T>
 inline void Vector<T>::clear()
 {
-	delete storage;
+	delete[] storage;
 	firstIndx = 0;
 	lastIndx = maxSize;
 }
