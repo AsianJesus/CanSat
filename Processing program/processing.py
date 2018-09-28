@@ -38,6 +38,7 @@ class Packet(object):
 class DataHandler(Thread):
     errorLog: Queue
     varList = [
+        lambda x: "teamID" if x == 1026 else None,
         lambda x: "packID" if x >= 0 else None,
         lambda x: "flyTime" if x >= 0 else None,
         lambda x: "temp" if x >= -46 and x <= 85 and x != 0 else None,
